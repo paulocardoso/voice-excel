@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "WorkVoice",
+    "slug": "workvoice",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "scheme": "workvoice",
+    "plugins": [
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "WorkVoice uses your microphone to assess speech clarity.",
+          "recordAudioAndroid": true
+        }
+      ]
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.workvoice.app"
+    },
+    "android": {
+      "package": "com.workvoice.app",
+      "permissions": ["RECORD_AUDIO"]
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}
