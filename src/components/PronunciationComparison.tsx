@@ -30,10 +30,9 @@ export function PronunciationComparison({
 
   useEffect(() => {
     void setAudioModeAsync({ allowsRecording: false, playsInSilentMode: true });
-    return () => {
-      player.pause();
-    };
-  }, [player]);
+    // No pause on unmount: useAudioPlayer releases (and stops) the native player
+    // itself, and calling pause() on a released player throws NotFoundException.
+  }, []);
 
   const playLearner = useCallback(async () => {
     if (!hasRecording) return;
